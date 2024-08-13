@@ -58,10 +58,10 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> {
 
         Get.offAll(() => AdminDashboard());
       } catch (e) {
-        Get.snackbar("Error", "Login failed: $e");
+        Get.snackbar("Error", "Login failed: $e",backgroundColor: Colors.green,snackPosition:SnackPosition.BOTTOM ,colorText: Colors.white);
       }
     } else {
-      Get.snackbar("Error", "Invalid email or password");
+      Get.snackbar("Error", "Invalid email or password",backgroundColor: Colors.red,snackPosition:SnackPosition.BOTTOM ,colorText: Colors.white);
     }
   }
 }

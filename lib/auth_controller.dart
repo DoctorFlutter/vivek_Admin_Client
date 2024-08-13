@@ -3,6 +3,7 @@ import 'package:admin/AdminLoginScreen.dart';
 import 'package:admin/client_home.dart';
 import 'package:admin/login_screen.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -46,7 +47,7 @@ class AuthController extends GetxController {
         }
       }
     } catch (e) {
-      Get.snackbar("Login Failed", e.toString());
+      Get.snackbar("Login Failed", e.toString(),backgroundColor: Colors.green,snackPosition:SnackPosition.BOTTOM ,colorText: Colors.white);
     }
   }
 

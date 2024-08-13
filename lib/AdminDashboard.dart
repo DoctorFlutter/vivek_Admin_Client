@@ -86,9 +86,9 @@ class AdminDashboard extends StatelessWidget {
           'name': itemName,
           'timestamp': FieldValue.serverTimestamp(),
         });
-        Get.snackbar("Success", "Item added successfully");
+        Get.snackbar("Success", "Item added successfully",backgroundColor: Colors.green,snackPosition:SnackPosition.BOTTOM ,colorText: Colors.white);
       } catch (e) {
-        Get.snackbar("Error", "Failed to add item: $e");
+        Get.snackbar("Error", "Failed to add item: $e",backgroundColor: Colors.red,snackPosition:SnackPosition.BOTTOM ,colorText: Colors.white);
       }
     }
   }
@@ -99,9 +99,9 @@ class AdminDashboard extends StatelessWidget {
         await firestore.collection('items').doc(id).update({
           'name': name,
         });
-        Get.snackbar("Success", "Item updated successfully");
+        Get.snackbar("Success", "Item updated successfully",backgroundColor: Colors.green,snackPosition:SnackPosition.BOTTOM ,colorText: Colors.white);
       } catch (e) {
-        Get.snackbar("Error", "Failed to update item: $e");
+        Get.snackbar("Error", "Failed to update item: $e",backgroundColor: Colors.red,snackPosition:SnackPosition.BOTTOM ,colorText: Colors.white);
       }
     }
   }
@@ -109,9 +109,9 @@ class AdminDashboard extends StatelessWidget {
   void deleteItem(String id) async {
     try {
       await firestore.collection('items').doc(id).delete();
-      Get.snackbar("Success", "Item deleted successfully");
+      Get.snackbar("Success", "Item deleted successfully",backgroundColor: Colors.green,snackPosition:SnackPosition.BOTTOM ,colorText: Colors.white);
     } catch (e) {
-      Get.snackbar("Error", "Failed to delete item: $e");
+      Get.snackbar("Error", "Failed to delete item: $e",backgroundColor: Colors.red,snackPosition:SnackPosition.BOTTOM ,colorText: Colors.white);
     }
   }
 
@@ -176,6 +176,6 @@ class AdminDashboard extends StatelessWidget {
 
   void logout() async {
     await FirebaseAuth.instance.signOut();
-    Get.offAll(() => AdminLoginScreen()); // Redirect to admin login screen
+    Get.offAll(() => AdminLoginScreen());
   }
 }
